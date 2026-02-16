@@ -8,14 +8,14 @@ const introSections = [
   { 
     id: 1, 
     type: "image-left", 
-    src: "/eyes-1.png", 
+    src: "/my-eyes.webp", 
     text: "I’ve always been drawn to the small details that most people walk past without noticing. Whether I’m wearing my Meta glasses, flying my DJI FPV drone, or holding my camera, I’m constantly searching for moments that feel alive. My passion for music and visual storytelling comes together here — in the colours, movements, and emotions I capture. This space is where I share the world exactly as I experience it, one frame at a time." 
   },
 
   { 
     id: 2, 
     type: "image-right", 
-    src: "/eyes-2.png", 
+    src: "/my-eyes2.webp", 
     text: "Every time I record something — a quiet street, a fast-paced flight, a simple moment with friends — I’m trying to freeze a feeling. My goal is to connect with people through visuals that speak louder than words. With every clip and every photo, I’m sharing the stories that inspire me daily: the energy of the city, the calm of nature, and the beauty hidden in everyday life. This page is my way of letting you step into those moments with me." 
   },
 
@@ -71,7 +71,7 @@ export default function MyEyes() {
       <div className="max-w-6xl mx-auto px-6 md:px-12 mt-10 md:mt-20 pb-20">
         
         <div className="flex items-center gap-4 mb-20">
-          <h1 className="text-3xl md:text-4xl font-bold font-serif italic">My Eyes</h1>
+          <h1 className="text-2xl md:text-4xl font-bold font-serif">My Eyes</h1>
         </div>
 
         {/* STATIC INTRO */}
@@ -108,7 +108,7 @@ export default function MyEyes() {
               <div className="absolute -left-[59px] md:-left-[107px] top-2 w-6 h-6 bg-black rounded-full border-4 border-white"></div>
 
               <div className="flex items-baseline gap-4 mb-8">
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-black">{post.title}</h2>
+                <h2 className="text-2xl md:text-5xl font-serif font-bold text-black">{post.title}</h2>
                 <span className="text-sm font-serif text-gray-500">{post.date}</span>
               </div>
 

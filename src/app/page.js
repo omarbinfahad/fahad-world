@@ -1,62 +1,89 @@
+"use client"; 
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+// We don't need the Spline import anymore since we are using a video!
 
 export default function Home() {
   return (
+    // 1. BACKGROUND RESTORED TO WHITE
     <main className="min-h-screen w-full bg-white text-[#374151]">
-      {/* HEADER */}
       <Navbar />
 
-      {/* HERO SECTION */}
-      <div className="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-20 px-8 gap-12 md:gap-24 max-w-7xl mx-auto mb-32">
-        {/* LEFT: Image */}
-        <div className="relative">
-          <div className="absolute -top-8 -left-8 w-full h-full border-[1.5px] border-blue-400 z-0 hidden md:block"></div>
-          <div className="relative z-10 w-[300px] h-[350px] md:w-[400px] md:h-[480px]">
-            <Image src="/hero-image.png" alt="Fahad" fill className="object-cover shadow-lg" priority />
+      {/* --- HERO SECTION --- */}
+      {/* --- HERO SECTION --- */}
+      <div className="flex flex-col md:flex-row items-center justify-between mt-6 md:mt-20 px-6 md:px-8 gap-8 max-w-7xl mx-auto mb-32">
+        
+        {/* COLUMN 1: PHOTO */}
+        {/* Changed to 'order-1' (First on Mobile, First on Desktop) */}
+        <div className="order-1 flex-shrink-0">
+          <div className="relative w-[280px] h-[320px] md:w-[320px] md:h-[380px]">
+             <div className="absolute -top-5 -left-5 w-full h-full border-[1.5px] border-blue-400 z-0 hidden md:block"></div>
+             <Image 
+               src="/hero-image.png" 
+               alt="Fahad" 
+               fill 
+               className="object-cover shadow-xl rounded-sm z-10 relative" 
+               priority 
+             />
           </div>
         </div>
 
-        {/* RIGHT: Text */}
-        <div className="flex flex-col max-w-md">
-          <h1 className="text-6xl md:text-8xl mb-12">
-            <span className="text-[#A0A0A0]">Fahad</span>
-            <span className="text-black font-semibold">.world</span>
-          </h1>
-          <div className="text-lg md:text-xl text-gray-600 font-normal leading-relaxed space-y-6 font-serif">
-            <p>
-              I exist in the quiet spaces between sound and sight. Where the note
-              fades into silence, and the shadow lengthens across the wall.
-            </p>
-            <p>
-              through our fingers like sand, leaving only the faintest trace of what
-              My work is an exploration of memory—how we hold it, how it slips.
-            </p>
-          </div>
+        {/* COLUMN 2: TEXT */}
+        {/* Changed to 'order-2' (Second on Mobile, Second on Desktop) */}
+        <div className="order-2 flex flex-col max-w-md text-center md:text-left">
+            <h1 className="text-6xl md:text-6xl mb-6 font-serif font-bold">
+              <span className="text-[#A0A0A0]">Fahad</span>
+              <span className="text-black">.world</span>
+            </h1>
+            <div className="text-lg text-gray-600 font-normal leading-relaxed space-y-6 font-serif">
+              <p>
+                I exist in the quiet spaces between sound and sight. Where the note
+                fades into silence, and the shadow lengthens across the wall.
+              </p>
+              <p>
+                Through our fingers like sand, leaving only the faintest trace.
+                My work is an exploration of memory—how we hold it, how it slips.
+              </p>
+            </div>
         </div>
+
+        {/* COLUMN 3: ANIMATION */}
+        {/* Changed to 'order-3' (Third on Mobile, Third on Desktop) */}
+        <div className="order-3 w-full md:w-[300px] h-[300px] md:h-[400px] flex items-center justify-center">
+            <video 
+              className="w-full h-full object-contain"
+              src="/arrows.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+            />
+        </div>
+
       </div>
+      {/* --- END HERO SECTION --- */}
 
 
-      {/* TIMELINE SECTIONS */}
-      <div className="max-w-4xl mx-auto px-6 md:px-0">
+      {/* --- TIMELINE SECTIONS (Unchanged) --- */}
+      <div className="max-w-4xl mx-auto px-6 md:px-0 pb-20">
         
         {/* 1. ABOUT ME */}
         <div className="flex gap-6 md:gap-12 relative">
           <div className="flex flex-col items-center">
             <div className="w-8 h-8 border border-black flex justify-center items-center bg-white z-10">
-              <span className="font-serif italic font-bold text-lg">i</span>
+              <span className="font-serif italic font-bold text-lg text-black">i</span>
             </div>
             <div className="w-[1px] bg-black h-full min-h-[400px]"></div>
           </div>
           <div className="pb-24 w-full">
             <Link href="/about" className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer">About Me</h2>
+              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer text-black">About Me</h2>
             </Link>
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="relative w-full h-[300px] md:h-[400px]">
-                <Image src="/about-image.png" alt="My Setup" fill className="object-cover"/>
+                <Image src="/UOW-03.jpg" alt="My Setup" fill className="object-cover shadow-sm"/>
               </div>
               <p className="text-gray-600 leading-relaxed font-serif text-lg">
                 I&apos;m a creative web developer and University of Wollongong student who lives for motion, culture, and expression. Whether I&apos;m surfing waves, skydiving through the sky, or learning a new language, I’m always chasing new perspectives. Fluent in five languages, I use design and visuals to capture moments and turn them into stories that connect people.
@@ -64,7 +91,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
 
         {/* 2. MUSIC */}
         <div className="flex gap-6 md:gap-12 relative">
@@ -76,24 +102,23 @@ export default function Home() {
           </div>
           <div className="pb-24 w-full">
             <Link href="/music" className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer">Music</h2>
+              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer text-black">Music</h2>
             </Link>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-8">
                 <div className="relative w-full h-[300px]">
-                  <Image src="/guittar.png" alt="Studio" fill className="object-cover"/>
+                  <Image src="/guittar.png" alt="Studio" fill className="object-cover shadow-sm"/>
                 </div>
                 <p className="text-gray-600 leading-relaxed font-serif text-lg">
                   Music is more than background sound for me — it&apos;s part of my creative process. I listen while building ideas and play guitar when I want to slow down and feel them. The emotions and rhythms I experience often translate into the visuals and experiences I design.
                 </p>
               </div>
               <div className="relative w-full h-[400px] md:mt-24">
-                <Image src="/music-man-new.png" alt="Artist Portrait" fill className="object-cover"/>
+                <Image src="/music-man-new.png" alt="Artist Portrait" fill className="object-cover shadow-sm"/>
               </div>
             </div>
           </div>
         </div>
-
 
         {/* 3. MY EYES */}
         <div className="flex gap-6 md:gap-12 relative">
@@ -105,12 +130,12 @@ export default function Home() {
           </div>
           <div className="pb-24 w-full">
             <Link href="/my-eyes" className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer">My Eyes</h2>
+              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer text-black">My Eyes</h2>
             </Link>
             <div className="flex flex-col gap-16">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="relative w-full md:w-1/2 h-[300px]">
-                  <Image src="/eyes-1.png" alt="Landscape 1" fill className="object-cover"/>
+                  <Image src="/sea-cliff.jpeg" alt="Landscape 1" fill className="object-cover shadow-sm"/>
                 </div>
                 <p className="w-full md:w-1/2 text-gray-600 leading-relaxed font-serif text-lg">
                   I enjoy walking through new places and letting nature slow me down. Whenever something feels peaceful or meaningful, I capture it. Photography helps me notice details most people pass by. Light, colors, and atmosphere often tell their own story. Each photo becomes a memory I can revisit later. It&apos;s my way of keeping moments alive.
@@ -121,12 +146,12 @@ export default function Home() {
                   Exploring nature gives me space to breathe and observe. I like documenting scenes that feel calm and authentic. Mountains, forests, and open skies inspire my perspective. Sometimes the smallest moment becomes the most beautiful frame. Through photos, I share how I experienced that place. It&apos;s less about perfection and more about feeling.
                 </p>
                 <div className="relative w-full md:w-1/2 h-[400px]">
-                  <Image src="/eyes-2.png" alt="Landscape 2" fill className="object-cover"/>
+                  <Image src="/Three Sisters.jpg" alt="Landscape 2" fill className="object-cover shadow-sm"/>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="relative w-full md:w-1/2 h-[450px]">
-                  <Image src="/eyes-3.png" alt="Landscape 3" fill className="object-cover"/>
+                  <Image src="/sydney.jpg" alt="Landscape 3" fill className="object-cover shadow-sm"/>
                 </div>
                 <p className="w-full md:w-1/2 text-gray-600 leading-relaxed font-serif text-lg">
                   I often carry a devices when I travel or wander around. Not to take pictures of everything, but to wait for the right moment. Good light, movement, and silence make a scene special. Photography teaches me patience and awareness. Every image reflects how I saw that moment in time. It turns ordinary days into lasting memories.
@@ -146,7 +171,7 @@ export default function Home() {
           </div>
           <div className="pb-12 w-full">
             <Link href="/contact" className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer">Contact</h2>
+              <h2 className="text-4xl md:text-5xl font-bold italic mb-8 hover:opacity-70 transition-opacity cursor-pointer text-black">Contact</h2>
             </Link>
             <p className="text-gray-600 leading-relaxed font-serif text-lg mb-8 max-w-xl">
               Feel free to reach out anytime. I&apos;m happy to chat about design, travel, languages, or life. I appreciate genuine conversations and shared curiosity. Every connection has a story behind it. Maybe ours starts here. Say hello 👋
@@ -165,7 +190,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* FOOTER COMPONENT */}
       <Footer />
     </main>
   );

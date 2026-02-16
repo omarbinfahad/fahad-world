@@ -36,7 +36,7 @@ export default function Music() {
         
         {/* --- HEADER --- */}
         <div className="flex flex-col items-center text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold italic mb-6 text-black tracking-tighter">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 text-black tracking-tighter">
             Sonic World
           </h1>
           <p className="text-gray-500 font-serif text-lg max-w-lg">

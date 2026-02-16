@@ -11,7 +11,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 md:px-12 mt-10 md:mt-20 pb-20">
         
         {/* TOP SECTION */}
-        <h1 className="text-4xl md:text-5xl font-bold font-serif italic mb-12">About Me</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-serif mb-12">About Me</h1>
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-24">
           <div className="relative w-full md:w-1/2 h-[400px] md:h-[500px]">
             <Image src="/about-image.png" alt="My Workspace" fill className="object-cover rounded-[5px]" />
@@ -56,7 +56,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="relative w-full h-[500px] md:mt-20">
-                  <Image src="/journey-2.png" alt="Cumilla Stadium" fill className="object-cover rounded-[5px]" />
+                  <Image src="/Cumilla.webp" alt="Cumilla Stadium" fill className="object-cover rounded-[5px]" />
                 </div>
              </div>
           </div>
@@ -89,7 +89,7 @@ export default function About() {
                     In Dhaka, I completed my secondary education while learning lessons far beyond the classroom, surrounded by inspiring people, busy streets, and unforgettable everyday moments that played a major role in shaping my character, ambition, and creative mindset. <br></br> <br></br> Dhaka is where my journey truly began, where curiosity turned into ambition and ideas slowly became direction, as the city&apos;s constant movement, challenges, and opportunities pushed me to grow, dream bigger, and take my first real steps toward the person I am becoming today.
                   </p>
                   <div className="relative w-full md:w-1/2 h-[400px]">
-                    <Image src="/journey-4.png" alt="Dhaka Boats" fill className="object-cover rounded-[5px]" />
+                    <Image src="/dmrc.avif" alt="Dhaka Boats" fill className="object-cover rounded-[5px]" />
                   </div>
                 </div>
              </div>
